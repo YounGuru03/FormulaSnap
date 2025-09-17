@@ -1,0 +1,14 @@
+pillow>=10.0.0
+opencv-python>=4.8.0
+numpy>=1.24.0
+pyperclip>=1.8.2
+pyinstaller>=5.13.0
+
+# Optional dependencies for enhanced OCR
+# pix2tex>=0.1.2
+# transformers>=4.30.0
+# torch>=2.0.0
+# torchvision>=0.15.0
+
+# These are commented out to reduce size for the initial version
+# Uncomment for full OCR capabilities

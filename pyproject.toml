@@ -1,0 +1,7 @@
+# PyInstaller build configuration for FormulaSnap
+
+[build-system]
+requires = ["setuptools>=45", "wheel", "pyinstaller>=5.0"]
+build-backend = "setuptools.build_meta"
+
+# PyInstaller spec file will be generated automatically
