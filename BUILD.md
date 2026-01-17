@@ -226,7 +226,9 @@ excludes = [
 **Error**: Application fails to start due to missing DLLs
 
 **Solution**: Install Visual C++ Redistributable:
-- Download from: https://aka.ms/vs/17/release/vc_redist.x64.exe
+- Visit Microsoft's official download page for Visual C++ Redistributables
+- Download and install the latest x64 version for your Windows
+- Or search for "Visual C++ Redistributable" on Microsoft's website
 - Install and rebuild
 
 #### 6. UPX Not Working

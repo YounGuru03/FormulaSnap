@@ -33,7 +33,9 @@ hiddenimports = [
     # NumPy imports
     'numpy',
     'numpy.core',
-    'numpy.core._multiarray_umath',
+    # Note: numpy.core._multiarray_umath is a private module that may change
+    # PyInstaller should auto-detect it, but include if you see NumPy import errors
+    # 'numpy.core._multiarray_umath',
     
     # PyTorch imports (if using advanced OCR)
     # Uncomment if torch is in requirements.txt
