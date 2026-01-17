@@ -1,14 +1,19 @@
-pillow>=10.0.0
-opencv-python>=4.8.0
-numpy>=1.24.0
+# Core Dependencies
+pillow>=10.0.0,<11.0.0
+opencv-python>=4.8.0,<5.0.0
+numpy>=1.24.0,<2.0.0
 pyperclip>=1.8.2
-pyinstaller>=5.13.0
 
-# Optional dependencies for enhanced OCR
+# Build Tools
+pyinstaller>=6.0.0,<7.0.0
+
+# Optional OCR Dependencies (commented for minimal build)
+# Uncomment these for full OCR capabilities with pix2tex
 # pix2tex>=0.1.2
-# transformers>=4.30.0
-# torch>=2.0.0
-# torchvision>=0.15.0
+# transformers>=4.30.0,<5.0.0
+# torch>=2.0.0,<3.0.0
+# torchvision>=0.15.0,<1.0.0
 
-# These are commented out to reduce size for the initial version
-# Uncomment for full OCR capabilities
+# These are commented out to reduce size for the lightweight version
+# If you need advanced OCR, uncomment the above dependencies
+# Note: Adding these will significantly increase the executable size (>500MB)

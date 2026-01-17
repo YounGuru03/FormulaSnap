@@ -14,26 +14,70 @@ datas = [
     # Add any data files here if needed
 ]
 
+# Comprehensive hidden imports for all dependencies
 hiddenimports = [
+    # PIL/Pillow imports
     'PIL',
     'PIL._tkinter_finder',
+    'PIL.Image',
+    'PIL.ImageTk',
+    'PIL.ImageGrab',
+    'PIL.ImageDraw',
+    'PIL.ImageFont',
+    'PIL.ImageFilter',
+    
+    # OpenCV imports
     'cv2',
+    'cv2.cv2',
+    
+    # NumPy imports
     'numpy',
-    'torch',
-    'torchvision',
-    'transformers',
-    'pix2tex',
+    'numpy.core',
+    'numpy.core._multiarray_umath',
+    
+    # PyTorch imports (if using advanced OCR)
+    # Uncomment if torch is in requirements.txt
+    # 'torch',
+    # 'torch.nn',
+    # 'torch.optim',
+    # 'torchvision',
+    # 'torchvision.transforms',
+    
+    # Transformers (if using)
+    # 'transformers',
+    # 'transformers.models',
+    
+    # pix2tex (if using)
+    # 'pix2tex',
+    # 'pix2tex.cli',
+    
+    # Clipboard functionality
     'pyperclip',
+    
+    # Tkinter and GUI
     'tkinter',
     'tkinter.ttk',
     'tkinter.filedialog',
     'tkinter.messagebox',
     'tkinter.scrolledtext',
+    '_tkinter',
+    
+    # Standard library imports that may be missed
     'threading',
     'logging',
+    'logging.handlers',
     'tempfile',
     'io',
     'typing',
+    'pathlib',
+    'argparse',
+    'traceback',
+    'queue',
+    'json',
+    'base64',
+    'datetime',
+    'collections',
+    'collections.abc',
 ]
 
 # Analysis
@@ -47,12 +91,19 @@ a = Analysis(
     hooksconfig={},
     runtime_hooks=[],
     excludes=[
+        # Exclude large unnecessary packages
         'matplotlib',
         'scipy',
         'pandas',
         'jupyter',
         'notebook',
         'IPython',
+        'pytest',
+        'sphinx',
+        'setuptools',
+        'pip',
+        'wheel',
+        'distutils',
     ],
     win_no_prefer_redirects=False,
     win_private_assemblies=False,
@@ -73,6 +124,9 @@ excluded_modules = [
     'PyQt6',
     'PySide2',
     'PySide6',
+    'wx',
+    'pytest',
+    'sphinx',
 ]
 
 a.binaries = [x for x in a.binaries if not any(excluded in x[0] for excluded in excluded_modules)]
@@ -94,10 +148,10 @@ exe = EXE(
     upx=True,
     upx_exclude=[],
     runtime_tmpdir=None,
-    console=False,
+    console=False,  # No console window for GUI application
     disable_windowed_traceback=False,
     target_arch=None,
     codesign_identity=None,
     entitlements_file=None,
-    icon=None,  # Add icon file path here if available
+    icon=None,  # Add icon file path here if available (e.g., 'icon.ico')
 )
